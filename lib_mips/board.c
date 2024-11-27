@@ -1954,15 +1954,14 @@ void board_init_r (gd_t *id, ulong dest_addr)
 	}
 /*web failsafe*/
 	gpio_init();
-	led_off();
-	printf( "\nif you press the WPS button will automatically enter the Update mode\n");
+	led_on();
+	printf( "\nif you press the RESET button will automatically enter the Update mode\n");
 	int counter = 0;
 	for(i=0;i<10;i++){
 		udelay(70000);
 		printf( "\n%d",i);
 		if(detect_wps())
 		{
-		led_on();
 		counter++;
 		break;
 		}
