@@ -2875,9 +2875,9 @@ void gpio_init(void)
 	val=RALINK_REG(RT2880_SYS_CNTL_BASE+0x60);	
 	val|=1<<14;
 	RALINK_REG(RT2880_SYS_CNTL_BASE+0x60)=val;
-	//gpio38 input gpio_ctrl_1 bit5=0
+	//gpio40 input gpio_ctrl_1 bit5=0
 	val=RALINK_REG(RT2880_REG_PIODIR+0x04);	
-	val&=~1<<6;
+	val&=~1<<8;
 	RALINK_REG(RT2880_REG_PIODIR+0x04)=val;	
 }
 void led_on( void )
